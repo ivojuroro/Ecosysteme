@@ -4,6 +4,7 @@
 class Behavior{
 public:
 	virtual void print() = 0;
+	~Behavior( void );
 
 };
 

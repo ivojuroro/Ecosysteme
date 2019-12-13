@@ -2,6 +2,9 @@
 #include "Milieu.h"
 #include "Bestiole.h"
 #include "Farsighted.h"
+#include "Kamikaze.h"
+#include "Fearful.h"
+#include "Gregarious.h"
 
 #include <iostream>
 
@@ -10,10 +13,29 @@ using namespace std;
 
 int main()
 {
-
 	Creator *c = new BestioleCreator();
-	Behavior *behavior = new Farsighted();
-	c -> create(behavior);
+	float proportions[4] = {0.1, 0.1, 0.1, 0.7};
+
+	for(unsigned int i = 0; i<proportions[0]*10; i = i+1){
+							Behavior *behavior = new Farsighted();
+							c -> create(behavior);
+					}
+
+	for(unsigned int i = 0; i<proportions[1]*10; i = i+1){
+								Behavior *behavior = new Kamikaze();
+								c -> create(behavior);
+						}
+
+	for(unsigned int i = 0; i<proportions[2]*10; i = i+1){
+								Behavior *behavior = new Fearful();
+								c -> create(behavior);
+							}
+
+	for(unsigned int i = 0; i<proportions[3]*10; i = i+1){
+									Behavior *behavior = new Gregarious();
+									c -> create(behavior);
+							}
+
 	//Use the destructor
 
 

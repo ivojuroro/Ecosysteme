@@ -12,6 +12,7 @@ class Creator{
 
 public:
 	virtual IBestiole* create(Behavior *behavior) = 0;
+	~Creator();
 };
 
 #endif

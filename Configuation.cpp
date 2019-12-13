@@ -10,7 +10,8 @@ void setDefaultParams() {
 }
 
 void configurePopulation() {
-
+	//proportion
+	//diferentes comportamientos
 }
 
 void createPropulation(float[] proportion){

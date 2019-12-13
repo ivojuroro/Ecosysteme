@@ -1,5 +1,5 @@
-main : main.cpp Bestiole.o BestioleCreator.o Farsighted.o
-	g++ -Wall -std=c++11 -o main main.cpp  Bestiole.o BestioleCreator.o Farsighted.o -I . -lX11 -lpthread
+main : main.cpp Bestiole.o BestioleCreator.o Farsighted.o Gregarious.o Kamikaze.o Fearful.o
+	g++ -Wall -std=c++11 -o main main.cpp  Bestiole.o BestioleCreator.o Farsighted.o Gregarious.o Kamikaze.o Fearful.o -I . -lX11 -lpthread
 
 BestioleCreator.o: BestioleCreator.h BestioleCreator.cpp Creator.h
 	g++ -Wall -std=c++11  -c BestioleCreator.cpp -I .
@@ -9,6 +9,15 @@ Bestiole.o : Bestiole.h Bestiole.cpp IBestiole.h
 
 Farsighted.o: Farsighted.h Farsighted.cpp Behavior.h
 	g++ -Wall -std=c++11 -c Farsighted.cpp -I .
+	
+Kamikaze.o: Kamikaze.h Kamikaze.cpp Behavior.h
+	g++ -Wall -std=c++11 -c Kamikaze.cpp -I .
+	
+Fearful.o: Fearful.h Fearful.cpp Behavior.h
+	g++ -Wall -std=c++11 -c Fearful.cpp -I .
+	
+Gregarious.o: Gregarious.h Gregarious.cpp Behavior.h
+	g++ -Wall -std=c++11 -c Gregarious.cpp -I .
 	
 
 

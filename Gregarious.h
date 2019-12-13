@@ -1,15 +1,15 @@
-#ifndef _FARSIGHTED_H_
-#define _FARSIGHTED_H_
+#ifndef _GREGARIOUS_H_
+#define _GREGARIOUS_H_
 
 #include "Behavior.h"
 
 #include <iostream>
 using namespace std;
 
-class Farsighted: public Behavior{
+class Gregarious: public Behavior{
 public:
 	void print();
-	~Farsighted();
+	~Gregarious();
 };
 
 #endif
