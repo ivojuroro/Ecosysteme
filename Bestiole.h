@@ -1,7 +1,8 @@
 #ifndef _BESTIOLES_H_
 #define _BESTIOLES_H_
 
-
+#include "IBestiole.h"
+#include "Behavior.h"
 #include "UImg.h"
 
 #include <iostream>
@@ -12,7 +13,7 @@ using namespace std;
 class Milieu;
 
 
-class Bestiole
+class Bestiole: public IBestiole
 {
 
 private :
@@ -38,6 +39,11 @@ public :                                           // Forme canonique :
    Bestiole( void );                               // Constructeur par defaut
    Bestiole( const Bestiole & b );                 // Constructeur de copies
    ~Bestiole( void );                              // Destructeur
+
+
+   Bestiole(Behavior *behavior);					//Creates bestiole with a given behavior
+   void printMyId();								//Method used to test IBestiole
+
                                                    // Operateur d'affectation binaire par defaut
    void action( Milieu & monMilieu );
    void draw( UImg & support );

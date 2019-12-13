@@ -32,6 +32,27 @@ Bestiole::Bestiole( void )
 
 }
 
+Bestiole::Bestiole( Behavior *behavior ){
+	identite = ++next;
+
+	   cout << "const Bestiole (" << identite << ") par defaut" << endl;
+	   behavior->print();
+
+	   x = y = 0;
+	   cumulX = cumulY = 0.;
+	   orientation = static_cast<double>( rand() )/RAND_MAX*2.*M_PI;
+	   vitesse = static_cast<double>( rand() )/RAND_MAX*MAX_VITESSE;
+
+	   couleur = new T[ 3 ];
+	   couleur[ 0 ] = static_cast<int>( static_cast<double>( rand() )/RAND_MAX*230. );
+	   couleur[ 1 ] = static_cast<int>( static_cast<double>( rand() )/RAND_MAX*230. );
+	   couleur[ 2 ] = static_cast<int>( static_cast<double>( rand() )/RAND_MAX*230. );
+}
+
+void Bestiole::printMyId(){
+	cout << this->identite << endl;
+}
+
 
 Bestiole::Bestiole( const Bestiole & b )
 {
