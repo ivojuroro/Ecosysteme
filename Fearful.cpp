@@ -17,9 +17,9 @@ double Fearful::modify_direction(std::vector<double> directions){
 		new_direction = -1*new_direction/static_cast<double>(directions.size()); // s'orienter vers la direction oposée
 		return new_direction;
 	}
-
 	else{
 		cout << "I am not afraid" << "\n";
+		return 0.0;
 	}
 
 }

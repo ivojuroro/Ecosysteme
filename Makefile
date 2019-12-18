@@ -4,8 +4,8 @@ main : main.cpp Aquarium.o Milieu.o Bestiole.o BestioleCreator.o Farsighted.o Gr
 Configuration.o: Bestiole.o BestioleCreator.o Farsighted.o Gregarious.o Kamikaze.o Fearful.o
 	g++ -Wall -std=c++11  -c Configuration.cpp -I .
 
-Milieu.o : Milieu.h Milieu.cpp Bestiole.o BestioleCreator.o
-	g++ -Wall -std=c++11  -c Milieu.cpp BestioleCreator.o Bestiole.o -I .
+Milieu.o : Milieu.h Milieu.cpp
+	g++ -Wall -std=c++11  -c Milieu.cpp -I .
 
 BestioleCreator.o: BestioleCreator.h BestioleCreator.cpp Creator.h
 	g++ -Wall -std=c++11  -c BestioleCreator.cpp -I .
