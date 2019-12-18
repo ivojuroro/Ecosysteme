@@ -40,7 +40,6 @@ void Milieu::step( void )
 
 }
 
-
 int Milieu::nbVoisins( const Bestiole & b )
 {
 

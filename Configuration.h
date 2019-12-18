@@ -10,12 +10,12 @@
 #include "Creator.h"
 #include "BestioleCreator.h"
 #include "Configuration.h"
+#include "Behavior.h"
 
 class Configuration{
 public:
     void setDefaultParams();
     void createPropulation();
     void configurePopulation();
-
 };
 #endif

@@ -7,6 +7,7 @@
 #include "Creator.h"
 #include "BestioleCreator.h"
 #include "Configuration.h"
+#include "Milieu.h"
 
 #include <iostream>
 
@@ -17,33 +18,39 @@ void Configuration::setDefaultParams() {
 }
 
 void Configuration::configurePopulation() {
-	//proportion
-	//diferentes comportamientos
 }
 
 void Configuration::createPropulation(){
 
+	Aquarium ecosysteme (640, 480, 30);
 	Creator *c = new BestioleCreator();
 	float proportions[4] = {0.1, 0.1, 0.1, 0.7};
 
 	for(unsigned int i = 0; i<proportions[0]*10; i = i+1){
 							Behavior *behavior = new Farsighted();
-							c -> create(behavior);
+							IBestiole* best = c->create(behavior);
+							best->getBehavior();
+							ecosysteme.getMilieu()-> addIBestioleMember(best);
 					}
 
 	for(unsigned int i = 0; i<proportions[1]*10; i = i+1){
 								Behavior *behavior = new Kamikaze();
-								c -> create(behavior);
+								IBestiole* best = c->create(behavior);
+								best->getBehavior();
+								ecosysteme.getMilieu()-> addIBestioleMember(best);
 						}
 
 	for(unsigned int i = 0; i<proportions[2]*10; i = i+1){
 								Behavior *behavior = new Fearful();
-								c -> create(behavior);
+								IBestiole* best = c->create(behavior);
+								best->getBehavior();
+								ecosysteme.getMilieu()-> addIBestioleMember(best);
 							}
 
 	for(unsigned int i = 0; i<proportions[3]*10; i = i+1){
-									Behavior *behavior = new Gregarious();
-									c -> create(behavior);
+								Behavior *behavior = new Gregarious();
+								IBestiole* best = c->create(behavior);
+								best->getBehavior();
+								ecosysteme.getMilieu()-> addIBestioleMember(best);
 							}
-
 }

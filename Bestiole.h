@@ -29,6 +29,7 @@ private :
    double            cumulX, cumulY; //distance?
    double            orientation;
    double            vitesse;
+   Behavior 	*    ownBehavior;
 
    T               * couleur;
 
@@ -43,6 +44,10 @@ public :                                           // Forme canonique :
 
    Bestiole(Behavior *behavior);					//Creates bestiole with a given behavior
    void printMyId();								//Method used to test IBestiole
+
+   Behavior  * getBehavior( void ) {
+	   ownBehavior->print();
+   	   return ownBehavior; }
 
                                                    // Operateur d'affectation binaire par defaut
    void action( Milieu & monMilieu );

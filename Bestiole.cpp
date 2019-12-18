@@ -1,6 +1,8 @@
 #include "Bestiole.h"
 
 #include "Milieu.h"
+#include "Behavior.h"
+#include "Farsighted.h"
 
 #include <cstdlib>
 #include <cmath>
@@ -20,6 +22,9 @@ Bestiole::Bestiole( void )
 
    cout << "const Bestiole (" << identite << ") par defaut" << endl;
 
+   Behavior* defaultBehavior = new Farsighted();
+   ownBehavior = defaultBehavior;
+
    x = y = 0;
    cumulX = cumulY = 0.;
    orientation = static_cast<double>( rand() )/RAND_MAX*2.*M_PI;
@@ -35,8 +40,8 @@ Bestiole::Bestiole( void )
 Bestiole::Bestiole( Behavior *behavior ){
 	identite = ++next;
 
-	   cout << "const Bestiole (" << identite << ") par defaut" << endl;
-	   behavior->print();
+	   cout << "const Bestiole (" << identite << ") with behavior! " << endl;
+	   ownBehavior = behavior;
 
 	   x = y = 0;
 	   cumulX = cumulY = 0.;
